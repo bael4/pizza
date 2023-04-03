@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F0941CA2946DD0300468CB8 /* Pods_pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB77C336054EE6A2162FD87 /* Pods_pizza.framework */; };
+		BE9058C329DAA14900A16DED /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9058C229DAA14900A16DED /* MainTabBarController.swift */; };
 		BEAFE40329D97BCB00EEAFDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAFE40229D97BCB00EEAFDB /* AppDelegate.swift */; };
 		BEAFE40529D97BCB00EEAFDB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAFE40429D97BCB00EEAFDB /* SceneDelegate.swift */; };
 		BEAFE40729D97BCB00EEAFDB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAFE40629D97BCB00EEAFDB /* HomeViewController.swift */; };
@@ -27,6 +28,7 @@
 		06D898DC546CDB795F6D321B /* Pods-pizza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pizza.debug.xcconfig"; path = "Target Support Files/Pods-pizza/Pods-pizza.debug.xcconfig"; sourceTree = "<group>"; };
 		2BD4D2F57C18FFDE9F14A369 /* Pods-pizza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pizza.release.xcconfig"; path = "Target Support Files/Pods-pizza/Pods-pizza.release.xcconfig"; sourceTree = "<group>"; };
 		8BB77C336054EE6A2162FD87 /* Pods_pizza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pizza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE9058C229DAA14900A16DED /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BEAFE3FF29D97BCB00EEAFDB /* pizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAFE40229D97BCB00EEAFDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEAFE40429D97BCB00EEAFDB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BE9058C129DAA11A00A16DED /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				BE9058C229DAA14900A16DED /* MainTabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		BEAFE3F629D97BCB00EEAFDB = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +95,7 @@
 		BEAFE40129D97BCB00EEAFDB /* pizza */ = {
 			isa = PBXGroup;
 			children = (
+				BE9058C129DAA11A00A16DED /* TabBar */,
 				BEAFE43029D9EC5C00EEAFDB /* Models */,
 				BEAFE41029D97BCC00EEAFDB /* Info.plist */,
 				BEAFE42829D9819400EEAFDB /* CustomCell */,
@@ -308,6 +319,7 @@
 			files = (
 				BEAFE43229D9EC7100EEAFDB /* Food.swift in Sources */,
 				BEAFE40729D97BCB00EEAFDB /* HomeViewController.swift in Sources */,
+				BE9058C329DAA14900A16DED /* MainTabBarController.swift in Sources */,
 				BEAFE41829D97E6200EEAFDB /* Color.swift in Sources */,
 				BEAFE41D29D9801500EEAFDB /* DetailViewController.swift in Sources */,
 				BEAFE40329D97BCB00EEAFDB /* AppDelegate.swift in Sources */,

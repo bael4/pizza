@@ -170,7 +170,6 @@ class DetailViewController: UIViewController {
         foodImage.snp.makeConstraints { make in
             make.top.equalTo(foodName.snp.bottom).offset(35)
             make.leading.trailing.equalToSuperview().inset(67)
-            make
         }
         
         

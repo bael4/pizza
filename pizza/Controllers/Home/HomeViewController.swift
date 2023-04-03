@@ -150,7 +150,7 @@ class HomeViewController: UIViewController {
         collectionPizza.snp.makeConstraints { make in
             make.top.equalTo(collectionFood.snp.bottom).offset(40)
             make.trailing.leading.equalToSuperview().inset(20)
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-100)
             
         }
         
