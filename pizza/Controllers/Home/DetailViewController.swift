@@ -207,7 +207,7 @@ class DetailViewController: UIViewController {
         }
         
         price.snp.makeConstraints { make in
-            make.top.equalTo(addingView.snp.bottom).offset(66)
+            make.top.equalTo(addingView.snp.bottom).offset(30)
             make.leading.equalToSuperview().offset(26)
         }
         
