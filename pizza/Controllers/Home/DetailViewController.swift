@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
         
         let label =  UILabel()
         label.textColor = .black
-        label.font = .boldSystemFont(ofSize: 38)
+        label.font = .boldSystemFont(ofSize: 30)
 //        label.text = "Pizza with Mushrooms"
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -170,6 +170,7 @@ class DetailViewController: UIViewController {
         foodImage.snp.makeConstraints { make in
             make.top.equalTo(foodName.snp.bottom).offset(35)
             make.leading.trailing.equalToSuperview().inset(67)
+            make
         }
         
         
@@ -207,12 +208,13 @@ class DetailViewController: UIViewController {
         }
         
         price.snp.makeConstraints { make in
-            make.top.equalTo(addingView.snp.bottom).offset(30)
+            make.bottom.equalTo(foodPrice.snp.top)
             make.leading.equalToSuperview().offset(26)
         }
         
         foodPrice.snp.makeConstraints { make in
-            make.top.equalTo(price.snp.bottom)
+//            make.top.equalTo(price.snp.bottom)
+            make.bottom.equalToSuperview().offset(-38)
             make.leading.equalTo(price)
         }
         
