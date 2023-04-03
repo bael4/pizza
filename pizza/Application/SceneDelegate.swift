@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let homeVC = HomeViewController()
         let tabBarItemHome = UITabBarItem(title: "Home", image: UIImage(named:"home"), selectedImage: UIImage(named: "home"))
         homeVC.tabBarItem = tabBarItemHome
-        let homeNavigation = UINavigationController(rootViewController: homeVC)
+      
         
         let favoriteVC = FavoriteViewController()
         let tabBarItemFavorite = UITabBarItem(title: "Favorite", image: UIImage(named:"favorite"), selectedImage: UIImage(named: "favorite"))
@@ -35,12 +35,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         ordersVC.tabBarItem = tabbarItemOrders
         
         let tabbarController = UITabBarController()
-        tabbarController.viewControllers = [homeNavigation, favoriteVC, cartVC, ordersVC]
+        tabbarController.viewControllers = [homeVC, favoriteVC, cartVC, ordersVC]
         tabbarController.tabBar.backgroundColor = Color.black
-       
+        let navigation = UINavigationController(rootViewController: tabbarController)
         
         
-        window.rootViewController = tabbarController
+        window.rootViewController = navigation
         self.window = window
         window.makeKeyAndVisible()
     }
