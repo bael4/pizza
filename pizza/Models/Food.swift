@@ -9,7 +9,7 @@ import Foundation
 
 
 
-struct Pizza {
+struct Food {
     var name: String
     var time: String
     var price: String

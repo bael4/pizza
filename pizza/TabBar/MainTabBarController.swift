@@ -21,7 +21,8 @@ class MainTabBarController: UITabBarController {
                 viewController: HomeViewController(),
                 title: "Home",
                 image: UIImage(named: "home")
-            ),
+            )
+            ,
             
             generateVC(
                 viewController: FavoriteViewController(),
@@ -54,7 +55,7 @@ class MainTabBarController: UITabBarController {
 
         let positionOnY: CGFloat = 14
         let width = tabBar.bounds.width * 0.8
-        let height = tabBar.bounds.height + positionOnY * 2
+        let height = tabBar.bounds.height + 14 * 2
         
         
         let roundLayer = CAShapeLayer()
@@ -77,7 +78,7 @@ class MainTabBarController: UITabBarController {
         tabBar.itemSpacing = 15
         tabBar.itemPositioning = .centered
         
-        roundLayer.fillColor = UIColor.black.cgColor
+        roundLayer.fillColor = #colorLiteral(red: 0.2039215565, green: 0.2039215565, blue: 0.2039215565, alpha: 1)
         tabBar.tintColor = Color.orange
         tabBar.unselectedItemTintColor = Color.mainGray
     }

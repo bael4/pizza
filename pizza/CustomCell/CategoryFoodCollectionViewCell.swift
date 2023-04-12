@@ -10,11 +10,13 @@ import UIKit
 class CategoryFoodCollectionViewCell: UICollectionViewCell {
     
     
+    
+    static let  reuseID  = "collection_category"
+    
     private let food: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16)
         label.textColor = Color.gray
-        
         return label
     }()
     
