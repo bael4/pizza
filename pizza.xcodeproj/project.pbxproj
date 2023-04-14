@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3F0941CA2946DD0300468CB8 /* Pods_pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB77C336054EE6A2162FD87 /* Pods_pizza.framework */; };
 		BE9058C329DAA14900A16DED /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9058C229DAA14900A16DED /* MainTabBarController.swift */; };
+		BEAF386F29E872FE00721C88 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAF386E29E872FE00721C88 /* SignInController.swift */; };
+		BEAF387129E8733200721C88 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAF387029E8733200721C88 /* SignInModel.swift */; };
+		BEAF387429E97ACC00721C88 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAF387329E97ACC00721C88 /* AuthService.swift */; };
 		BEAFE40329D97BCB00EEAFDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAFE40229D97BCB00EEAFDB /* AppDelegate.swift */; };
 		BEAFE40529D97BCB00EEAFDB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAFE40429D97BCB00EEAFDB /* SceneDelegate.swift */; };
 		BEAFE40729D97BCB00EEAFDB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAFE40629D97BCB00EEAFDB /* HomeViewController.swift */; };
@@ -23,8 +26,8 @@
 		BEAFE42C29D981D700EEAFDB /* FoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAFE42B29D981D700EEAFDB /* FoodCollectionViewCell.swift */; };
 		BEAFE43229D9EC7100EEAFDB /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAFE43129D9EC7100EEAFDB /* Food.swift */; };
 		BED16E7529DC6C8300958C77 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BED16E7429DC6C8300958C77 /* GoogleService-Info.plist */; };
-		BED16E7829DC815400958C77 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED16E7729DC815400958C77 /* SignInViewController.swift */; };
-		BED16E7A29DC816800958C77 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED16E7929DC816800958C77 /* SignUpViewController.swift */; };
+		BED16E7829DC815400958C77 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED16E7729DC815400958C77 /* SignIn.swift */; };
+		BED16E7A29DC816800958C77 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED16E7929DC816800958C77 /* SignUp.swift */; };
 		BEF3553D29E698A300D481D9 /* CartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3553C29E698A300D481D9 /* CartCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +36,9 @@
 		2BD4D2F57C18FFDE9F14A369 /* Pods-pizza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pizza.release.xcconfig"; path = "Target Support Files/Pods-pizza/Pods-pizza.release.xcconfig"; sourceTree = "<group>"; };
 		8BB77C336054EE6A2162FD87 /* Pods_pizza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pizza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9058C229DAA14900A16DED /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		BEAF386E29E872FE00721C88 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		BEAF387029E8733200721C88 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		BEAF387329E97ACC00721C88 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		BEAFE3FF29D97BCB00EEAFDB /* pizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAFE40229D97BCB00EEAFDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEAFE40429D97BCB00EEAFDB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,8 +55,8 @@
 		BEAFE42B29D981D700EEAFDB /* FoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionViewCell.swift; sourceTree = "<group>"; };
 		BEAFE43129D9EC7100EEAFDB /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		BED16E7429DC6C8300958C77 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BED16E7729DC815400958C77 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		BED16E7929DC816800958C77 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		BED16E7729DC815400958C77 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+		BED16E7929DC816800958C77 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		BEF3553C29E698A300D481D9 /* CartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +86,14 @@
 				BE9058C229DAA14900A16DED /* MainTabBarController.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		BEAF387229E97AB800721C88 /* AuthService */ = {
+			isa = PBXGroup;
+			children = (
+				BEAF387329E97ACC00721C88 /* AuthService.swift */,
+			);
+			path = AuthService;
 			sourceTree = "<group>";
 		};
 		BEAFE3F629D97BCB00EEAFDB = {
@@ -208,10 +222,29 @@
 		BED16E7629DC813A00958C77 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				BED16E7729DC815400958C77 /* SignInViewController.swift */,
-				BED16E7929DC816800958C77 /* SignUpViewController.swift */,
+				BEAF387229E97AB800721C88 /* AuthService */,
+				BEF369C629E8249A00166F1D /* SignUp */,
+				BEF369C529E8248700166F1D /* SignIn */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		BEF369C529E8248700166F1D /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				BED16E7729DC815400958C77 /* SignIn.swift */,
+				BEAF386E29E872FE00721C88 /* SignInController.swift */,
+				BEAF387029E8733200721C88 /* SignInModel.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		BEF369C629E8249A00166F1D /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				BED16E7929DC816800958C77 /* SignUp.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		F8F7A9148AC2486C796DCEE9 /* Pods */ = {
@@ -341,17 +374,20 @@
 				BEAFE43229D9EC7100EEAFDB /* Food.swift in Sources */,
 				BEAFE40729D97BCB00EEAFDB /* HomeViewController.swift in Sources */,
 				BE9058C329DAA14900A16DED /* MainTabBarController.swift in Sources */,
+				BEAF387429E97ACC00721C88 /* AuthService.swift in Sources */,
 				BEAFE41829D97E6200EEAFDB /* Color.swift in Sources */,
 				BEAFE41D29D9801500EEAFDB /* DetailViewController.swift in Sources */,
-				BED16E7829DC815400958C77 /* SignInViewController.swift in Sources */,
+				BEAF386F29E872FE00721C88 /* SignInController.swift in Sources */,
+				BED16E7829DC815400958C77 /* SignIn.swift in Sources */,
 				BEAFE40329D97BCB00EEAFDB /* AppDelegate.swift in Sources */,
 				BEAFE42429D9806B00EEAFDB /* MyOrdersViewController.swift in Sources */,
-				BED16E7A29DC816800958C77 /* SignUpViewController.swift in Sources */,
+				BED16E7A29DC816800958C77 /* SignUp.swift in Sources */,
 				BEAFE42229D9805400EEAFDB /* CartViewController.swift in Sources */,
 				BEAFE42629D9808400EEAFDB /* FavoriteViewController.swift in Sources */,
 				BEAFE42A29D981C000EEAFDB /* CategoryFoodCollectionViewCell.swift in Sources */,
 				BEAFE40529D97BCB00EEAFDB /* SceneDelegate.swift in Sources */,
 				BEF3553D29E698A300D481D9 /* CartCollectionViewCell.swift in Sources */,
+				BEAF387129E8733200721C88 /* SignInModel.swift in Sources */,
 				BEAFE42C29D981D700EEAFDB /* FoodCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

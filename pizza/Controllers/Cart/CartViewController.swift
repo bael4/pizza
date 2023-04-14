@@ -32,7 +32,6 @@ class CartViewController: UIViewController {
         view.backgroundColor = .systemGreen
         view.showsHorizontalScrollIndicator = false
         view.dataSource = self
-        view.backgroundColor = .systemGreen
         view.register(CartCollectionViewCell.self, forCellWithReuseIdentifier: CartCollectionViewCell.reuseId)
         return view
     }()
