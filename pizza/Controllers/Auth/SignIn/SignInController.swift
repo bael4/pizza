@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 
 class SignInController {
@@ -14,15 +14,18 @@ class SignInController {
     
     private weak var view: SignIn!
     private var model: SignInModel?
+
     
     init(view: SignIn) {
         self.view = view
         self.model = SignInModel(controller: self)
+     
     }
     
-    
-    func check () {
-//        model?.checkTF(tf: )
+    func checkController (email: UITextField, password: UITextField) -> Bool  {
+        
+        return ((model?.check(email: email, password: password))!)
     }
+  
     
 }

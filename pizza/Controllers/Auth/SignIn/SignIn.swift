@@ -10,7 +10,9 @@ import UIKit
 class SignIn: UIViewController {
     
     private  var controller: SignInController!
-    var auth = Auth()
+     
+     
+
     // MARK: - Create UIElements
     
     private lazy var login_label: UILabel = {
@@ -28,7 +30,7 @@ class SignIn: UIViewController {
         return label
     }()
     
-    private lazy var emailTF: UITextField = {
+     lazy var emailTF: UITextField = {
         let view = UITextField()
         view.placeholder = "email"
         
@@ -41,7 +43,7 @@ class SignIn: UIViewController {
     }()
     
     
-    private lazy var passwordTF: UITextField = {
+     lazy var passwordTF: UITextField = {
         let view = UITextField()
         view.placeholder = "password"
         
@@ -97,20 +99,23 @@ class SignIn: UIViewController {
     }
     
     @objc func logIn () {
-        if emailTF.text?.isEmpty ?? true  {
+        
+        if controller.checkController(email: emailTF, password: passwordTF) {
+           
             let alertController = UIAlertController(title: "Ошибка", message: "Пожалуйста, заполните все поля", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(okAction)
             present(alertController, animated: true, completion: nil)
+
         } else {
-            auth.isAuth = true
-            print("work")
-       
+ 
+            let mainTabBar = MainTabBarController()
+            self.navigationController?.pushViewController(mainTabBar, animated: true)
         }
-        
-       
-   
+
     }
+    
+    
     
     private func setupSubViews () {
         

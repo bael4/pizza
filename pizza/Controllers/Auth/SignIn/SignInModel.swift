@@ -9,27 +9,28 @@ import Foundation
 import UIKit
 
 
+
+
+
+
 class SignInModel {
     
     private weak var controller: SignInController!
-//    private var sc = SceneDelegate()
-    
+
     
     init(controller: SignInController!) {
         self.controller = controller
     }
     
-    
-    func checkTF (tf: [UITextField]) {
+   
+    func check (email: UITextField, password: UITextField) -> Bool {
         
-        for e in tf {
-            if e.text?.isEmpty ?? true {
-               print("error")
-            }else{
-//                sc.window?.rootViewController = MainTabBarController()
-            }
+        if email.text?.isEmpty ?? true || password.text?.isEmpty ?? true {
+            return true
+        }else {
+            return false
         }
-       
+        
     }
     
     

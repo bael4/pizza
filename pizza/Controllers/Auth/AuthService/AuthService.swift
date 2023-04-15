@@ -9,6 +9,44 @@ import Foundation
 
 
  class Auth {
-      var isAuth = false
      
+     static var auth = Auth()
+     private var isAuth = false
+     
+     func succes ()  {
+        isAuth = true
+     }
+     
+    
+     
+     func getRes () -> Bool {
+         return isAuth
+     }
+     
+     
+     
+}
+
+
+class Counter {
+    static let shared = Counter()
+    private var count = 0
+    
+    private init() {}
+    
+    func increment() {
+        count += 1
+    }
+    
+    func decrement() {
+        count -= 1
+    }
+    
+    func reset() {
+        count = 0
+    }
+    
+    func getCount() -> Int {
+        return count
+    }
 }
