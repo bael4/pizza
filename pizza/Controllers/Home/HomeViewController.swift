@@ -15,24 +15,19 @@ import SnapKit
 class HomeViewController: UIViewController {
     
     private var category: [String] = ["All","Pizza", "Fast Food", "Vegatarians"]
+    
     private var food: [Food] = [
         Food(name: "Pizza with Mushrooms", time: "14-20 minutes", price: "$12", image: "pizza", details: Details(name: "Pizza with Mushrooms", image: "pizza2")),
         Food(name: "Pepperoni Cheese Pizza", time: "14-20 minutes", price: "$18", image: "pepperoni", details: Details(name: "Pepperoni Cheese Pizza", image: "pizza2")),
         Food(name: "Pizza with Mushrooms", time: "20-30 minutes", price: "$14", image: "pizza", details: Details(name: "Pizza with Mushrooms", image: "pizza2")),
         ]
-   
     
- 
-
-    
-       
-    
-    
-    var productAmount = 0
     public var basketProducts: [Food] = []
     
+    var productAmount = 0
+    
+    
     private let greeting: UILabel = {
-        
         let label =  UILabel()
         label.textColor = Color.gray
         label.font = .systemFont(ofSize: 18)
@@ -42,7 +37,6 @@ class HomeViewController: UIViewController {
     }()
     
     private let welcome: UILabel = {
-        
         let label =  UILabel()
         label.textColor = .black
         label.font = .boldSystemFont(ofSize: 32)
@@ -72,37 +66,29 @@ class HomeViewController: UIViewController {
     }()
     
     private let collectionFood: UICollectionView = {
-           
-           let view: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-           view.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-           view.itemSize = CGSize(width:100, height: 35)
-           view.scrollDirection = .horizontal
-           view.minimumLineSpacing = 30
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        layout.itemSize = CGSize(width:100, height: 35)
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 30
         
-        
-           let vc = UICollectionView(frame: .zero, collectionViewLayout: view)
-           vc.showsHorizontalScrollIndicator = false
-        vc.register(CategoryFoodCollectionViewCell.self, forCellWithReuseIdentifier: CategoryFoodCollectionViewCell.reuseID)
-        
-           
-           return vc
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.showsHorizontalScrollIndicator = false
+        view.register(CategoryFoodCollectionViewCell.self, forCellWithReuseIdentifier: CategoryFoodCollectionViewCell.reuseID)
+        return view
        }()
     
     private let collectionPizza: UICollectionView = {
-           
-           let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-           layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
-           layout.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.9 , height: 184)
-           layout.scrollDirection = .vertical
-           layout.minimumLineSpacing = 30
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.9 , height: 184)
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 30
         
-        
-           let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-           cv.showsVerticalScrollIndicator = false
-           cv.register(FoodCollectionViewCell.self, forCellWithReuseIdentifier: FoodCollectionViewCell.reuseId)
-
-           
-           return cv
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.showsVerticalScrollIndicator = false
+        view.register(FoodCollectionViewCell.self, forCellWithReuseIdentifier: FoodCollectionViewCell.reuseId)
+        return view
        }()
     
         private lazy var basketButton: UIButton = {
@@ -111,41 +97,33 @@ class HomeViewController: UIViewController {
         button.backgroundColor = .systemGreen
         button.addTarget(self, action: #selector(goToCart), for: .touchUpInside)
         return button
-            
-    }()
+        }()
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         initUI()
         constrains()
-      
     }
 
     
     private func initUI(){
-        
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
-        
     [greeting, welcome, searchBar, notificationsImage, filterImage,collectionFood, collectionPizza, basketButton].forEach { box in
                    view.addSubview(box)
     }
-        
         collectionFood.dataSource = self
         collectionPizza.dataSource = self
         collectionPizza.delegate = self
-        
     }
 
     private func constrains () {
-
-        greeting.snp.makeConstraints { make in
+            greeting.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(54)
             make.leading.equalToSuperview().offset(24)
-        }
+               }
+        
             welcome.snp.makeConstraints { make in
                 make.top.equalTo(greeting.snp.bottom).offset(10)
                 make.leading.equalTo(greeting.snp.leading)
@@ -169,18 +147,15 @@ class HomeViewController: UIViewController {
             }
                 
             collectionFood.snp.makeConstraints { make in
-                
                     make.top.equalTo(searchBar.snp.bottom).offset(46)
                     make.trailing.leading.equalToSuperview().inset(0)
                     make.height.equalTo(50)
                 }
         
             collectionPizza.snp.makeConstraints { make in
-                
             make.top.equalTo(collectionFood.snp.bottom).offset(40)
             make.trailing.leading.equalToSuperview().inset(20)
             make.bottom.equalToSuperview().offset(-200)
-            
         }
         
         
@@ -190,26 +165,16 @@ class HomeViewController: UIViewController {
             make.height.equalTo(50)
             make.width.equalTo(50)
         }
-        
-
     }
     
     
     @objc func goToCart() {
-     
-       
         guard let tabBarController = self.tabBarController else { return }
         guard let cartVC = tabBarController.viewControllers?[2] as? CartViewController else { return }
         cartVC.food = basketProducts
         tabBarController.selectedIndex = 2
-        
-      
-    
-        
 }
     
-
-
 }
 
 
@@ -221,14 +186,12 @@ extension HomeViewController: UICollectionViewDataSource,  UICollectionViewDeleg
         }else{
            return food.count
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == self.collectionFood {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryFoodCollectionViewCell.reuseID ,for: indexPath) as! CategoryFoodCollectionViewCell
-        
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 10
             
@@ -244,7 +207,6 @@ extension HomeViewController: UICollectionViewDataSource,  UICollectionViewDeleg
             return cell
             
         }else{
-            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FoodCollectionViewCell.reuseId, for: indexPath) as! FoodCollectionViewCell
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 10
@@ -261,34 +223,24 @@ extension HomeViewController: UICollectionViewDataSource,  UICollectionViewDeleg
             cell.initData(food: food[indexPath.row])
             return cell
         }
-      
     }
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-         let vc = DetailViewController()
-         
+        let vc = DetailViewController()
         vc.foodName.text = food[indexPath.row].details.name
         vc.foodPrice.text = food[indexPath.row].price
         vc.foodImage.image = UIImage(named: food[indexPath.row].details.image)
-        
-        
          self.navigationController?.pushViewController(vc, animated: true)
-
-        
      }
-    
 }
 
 
 extension HomeViewController: CellActions {
-    
     func didProudChose(index: Int) {
     productAmount += 1
         basketButton.setTitle("\(productAmount)", for: .normal)
         basketProducts.append(food[index])
         print(basketProducts)
     }
-    
-    
 }

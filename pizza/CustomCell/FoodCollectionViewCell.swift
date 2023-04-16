@@ -64,7 +64,7 @@ class FoodCollectionViewCell: UICollectionViewCell {
     }()
   
     
-    private let add: UIButton = {
+    private lazy var add: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 10
         button.setTitle("+", for: .normal)

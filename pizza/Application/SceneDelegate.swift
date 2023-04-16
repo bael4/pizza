@@ -21,18 +21,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private  func check () {
         
-//        if Auth.auth.getRes() {
-//
-//
+        //if Auth.auth.getRes() {
+
+            let nav = UINavigationController(rootViewController:  SignIn() )
+            self.window?.rootViewController = nav
+            self.window?.backgroundColor = .white
+//        }else{
+//                    let nav = UINavigationController(rootViewController: MainTabBarController())
+//                    self.window?.rootViewController = nav
+//                    self.window?.backgroundColor = .white
 //        }
         
-        let nav = UINavigationController(rootViewController:  SignIn() )
-        self.window?.rootViewController = nav
-        self.window?.backgroundColor = .white
-
-//        let nav = UINavigationController(rootViewController: MainTabBarController())
-//        self.window?.rootViewController = nav
-//        self.window?.backgroundColor = .white
 
     }
     

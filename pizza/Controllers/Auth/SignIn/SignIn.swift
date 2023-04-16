@@ -59,6 +59,8 @@ class SignIn: UIViewController {
     private lazy var login_button: UIButton = {
         let button = UIButton()
         button.backgroundColor = #colorLiteral(red: 0.9882199168, green: 0.6642766595, blue: 0.2534056902, alpha: 1)
+        button.setTitle("LOGIN", for: .normal)
+        button.layer.cornerRadius = 25
         button.addTarget(self, action: #selector(logIn), for: .touchUpInside)
         return button
     }()
@@ -89,30 +91,20 @@ class SignIn: UIViewController {
         super.viewDidLoad()
         controller = SignInController(view: self)
         setupSubViews()
-        eventHandler()
     }
    
-   
-    
-    func eventHandler(){
-        
-    }
-    
     @objc func logIn () {
-        
+   
         if controller.checkController(email: emailTF, password: passwordTF) {
-           
             let alertController = UIAlertController(title: "Ошибка", message: "Пожалуйста, заполните все поля", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(okAction)
             present(alertController, animated: true, completion: nil)
 
         } else {
- 
             let mainTabBar = MainTabBarController()
             self.navigationController?.pushViewController(mainTabBar, animated: true)
         }
-
     }
     
     
@@ -151,13 +143,13 @@ class SignIn: UIViewController {
         login_button.snp.makeConstraints { make in
             make.top.equalTo(passwordTF.snp.bottom).offset(50)
             make.trailing.equalToSuperview().offset(-30)
-            make.width.equalTo(100)
+            make.width.equalTo(140)
             make.height.equalTo(50)
         }
         
         container.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-10)
+            make.bottom.equalToSuperview().offset(-20)
         }
         
         
@@ -175,8 +167,5 @@ class SignIn: UIViewController {
             make.leading.equalTo(dontAC.snp.trailing).offset(2)
             make.trailing.equalToSuperview()
         }
-      
-        
     }
-    
 }

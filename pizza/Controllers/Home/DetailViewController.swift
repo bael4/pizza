@@ -11,13 +11,12 @@ class DetailViewController: UIViewController {
 
     
     private let idCell = "cell"
-    private var sizeFood: [String] = []
+    private var sizeFood: [String] =  ["8 inch",  "20 inch",  "32 inch"]
     var foodName: UILabel = {
         
         let label =  UILabel()
         label.textColor = .black
         label.font = .boldSystemFont(ofSize: 30)
-//        label.text = "Pizza with Mushrooms"
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -27,7 +26,6 @@ class DetailViewController: UIViewController {
     
     var foodImage: UIImageView = {
         let image = UIImageView()
-//        image.image = UIImage(named: "pizza2")
         return image
     }()
     
@@ -47,20 +45,16 @@ class DetailViewController: UIViewController {
     
     
     private let collectionSize: UICollectionView = {
-           
-           let view: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-           view.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-           view.itemSize = CGSize(width:100, height: 35)
-           view.scrollDirection = .horizontal
-           view.minimumLineSpacing = 50
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        layout.itemSize = CGSize(width:100, height: 35)
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 50
         
-        
-           let vc = UICollectionView(frame: .zero, collectionViewLayout: view)
-           vc.showsHorizontalScrollIndicator = false
-           vc.register(CategoryFoodCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        
-           
-           return vc
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.showsHorizontalScrollIndicator = false
+        view.register(CategoryFoodCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        return view
        }()
     
     
@@ -109,7 +103,6 @@ class DetailViewController: UIViewController {
         let label = UILabel()
         label.textColor = Color.green
         label.font = .boldSystemFont(ofSize: 28)
-//        label.text = "Price"
         return label
     }()
     
@@ -131,7 +124,6 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         initUI()
-        initData()
         constrains()
         
     }
@@ -156,8 +148,6 @@ class DetailViewController: UIViewController {
         [count,plus,minus].forEach { box in
                        addingView.addSubview(box)
         }
-        
-
     }
     
     
@@ -212,7 +202,6 @@ class DetailViewController: UIViewController {
         }
         
         foodPrice.snp.makeConstraints { make in
-//            make.top.equalTo(price.snp.bottom)
             make.bottom.equalToSuperview().offset(-38)
             make.leading.equalTo(price)
         }
@@ -223,23 +212,7 @@ class DetailViewController: UIViewController {
             make.height.equalTo(60)
             make.width.equalTo(200)
         }
-        
-        
-        
     }
-    
-    
-    
-    private func initData (){
-        
-        sizeFood = [
-        "8 inch",  "20 inch",  "32 inch",
-        ]
-    }
-   
-    
-  
-
 }
 
 
@@ -266,6 +239,4 @@ extension DetailViewController: UICollectionViewDataSource {
         cell.initDataSize(size: sizeFood[indexPath.row])
         return cell
     }
-    
-    
 }
